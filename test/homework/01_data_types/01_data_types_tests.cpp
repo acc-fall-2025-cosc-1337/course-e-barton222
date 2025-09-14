@@ -1,13 +1,7 @@
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
-#include "catch.hpp"
 #include "data_types.h"
-TEST_CASE("Verify Test Configuration", "verification") {
-	REQUIRE(true == true);
-}
+#include <gtest/gtest.h>
 
-TEST_CASE("Verify sum_numbers function") 
-{
-	REQUIRE(add_numbers(5, 5) == 10);
-	REQUIRE(add_numbers(10, 10) == 20);
+TEST(TestMultiplyNumbers, HandlesPositiveNumbers) {
+    EXPECT_EQ(multiply_numbers(7, 7), 49);
+    EXPECT_EQ(multiply_numbers(5, 5), 25);
 }
-
