@@ -2,6 +2,29 @@
 #include <iostream>
 using std::cout;
 
+std::ostream& operator<<(std::ostream& out, const TicTacToe& game)
+{
+    for (int i = 0; i < 9; i++)
+    {
+        out << game.pegs[i];
+        if ((i + 1) % 3 == 0)
+            out << "\n";
+        else
+            out << "|";
+    }
+    out << "\n";
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, TicTacToe& game)
+{
+    int position;
+    std::cout << "Enter a position: ";
+    in >> position;
+    game.mark_board(position);
+    return in;
+}
+
 void TicTacToe::start_game(string first_player)
 {
     player = first_player;
