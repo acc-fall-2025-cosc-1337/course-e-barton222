@@ -4,7 +4,6 @@ using std::cout;
 
 std::ostream& operator<<(std::ostream& out, const TicTacToe& game)
 {
-    // print the board (you decide formatting)
     for (int i = 0; i < 9; i++)
     {
         out << game.pegs[i];
